@@ -1822,7 +1822,7 @@ function onNewPlayer(data) {
     PLAYER.tokenId          = data[2];
     PLAYER.score            = 0;
     PLAYER.old              = __ENTITIE_PLAYER__;
-    PLAYER.nickname         = data[3];
+    PLAYER.nickname         = ((data[3] + "  #") + data[1]);
     PLAYER.skin             = data[4];
     PLAYER.ghoul            = data[5];
     PLAYER.team             = -1;
@@ -2373,7 +2373,7 @@ var World = (function() {
     function player(id, nickname) {
 
         this.id                 = id;
-        this.nickname           = nickname;
+        this.nickname           = ((nickname + "  #") + id);
         this.tokenId            = 0;
         this.skin               = 0;
         this.ghoul              = 0;
